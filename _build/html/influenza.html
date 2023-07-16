@@ -1,0 +1,602 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Influenza Data Set &#8212; by 1001dimensions</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+    <script src="_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'influenza';</script>
+    <link rel="shortcut icon" href="https://fav.farm/👀"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="instacart Data Set" href="instacart.html" />
+    <link rel="prev" title="AsteroidOS" href="asteroidos.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/1001dim-logo.svg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/1001dim-logo.svg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">DESIGN OPS</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="abds.html">Autobahn Design System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ab-ops.html">Autobahn Design Ops</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">PRODUCT &amp; UX</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="viffie.html">viffie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="asteroidos.html">asteroid OS</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">DATA ANALYTICS</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Influenza</a></li>
+<li class="toctree-l1"><a class="reference internal" href="instacart.html">instacart</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/din96/portfolio-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/influenza.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Influenza Data Set</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives">Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-plan">Project Plan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#process">Process</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-preparation">Data Preparation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-analysis">Data Analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-vizualisation-findings">Data Vizualisation &amp; Findings</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#results">Results</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <p><img alt="influenza-banner-web" src="_images/influenza-banner-web.png" /></p>
+<section class="tex2jax_ignore mathjax_ignore" id="influenza-data-set">
+<h1>Influenza Data Set<a class="headerlink" href="#influenza-data-set" title="Permalink to this heading">#</a></h1>
+<p>This data set contains information about influenza deaths, population, lab results, and flu shot rates in the United States. The data set consists of four sources:</p>
+<ul class="simple">
+<li><p><strong>Influenza deaths:</strong> Number of deaths by week, state, and age group from 2014 to 2020. Source: CDC’s NCHS Mortality Surveillance System.</p></li>
+<li><p><strong>Population data:</strong> Population estimates by state and age group from 2010 to 2019. Source: U.S. Census Bureau’s Population Estimates Program.</p></li>
+<li><p><strong>Counts of influenza lab results:</strong> Number of specimens tested by week, state, and type/subtype from 2014 to 2020. Source: CDC’s FluView Interactive application.</p></li>
+<li><p><strong>Survey of flu shot rates in children:</strong> Percentage of children vaccinated by month, state, and age group from 2018 to 2020. Source: CDC’s National Immunization Survey-Flu.</p></li>
+</ul>
+<p>The data set was used to analyze and compare flu activity and vaccination in the US.</p>
+<hr class="docutils" />
+<section id="objectives">
+<h2>Objectives<a class="headerlink" href="#objectives" title="Permalink to this heading">#</a></h2>
+<div class="dropdown admonition">
+<p class="admonition-title">Learning objectives</p>
+<ul class="simple">
+<li><p>Write hypotheses and plan the research design</p></li>
+<li><p>Mine data</p></li>
+<li><p>Conduct descriptive statistics</p></li>
+<li><p>Test hypotheses or make estimates with inferential statistics</p></li>
+<li><p>Master Excel and Tableau</p></li>
+</ul>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Project objectives</p>
+<p>AMN Healthcare is a medical staffing agency that supplies temporary workers to clinics and hospitals on a contingency basis. The agency wants to forecast staffing needs across the country for the upcoming Influenza season, a period of high demand for additional staff. <br/>
+Investigate the patterns and correlations and decide how to allocate temporary medical staff across the states for the upcoming season.</p>
+</div>
+</section>
+<section id="project-plan">
+<h2>Project Plan<a class="headerlink" href="#project-plan" title="Permalink to this heading">#</a></h2>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Milestone</p></th>
+<th class="head"><p>Tasks</p></th>
+<th class="head"><p>Deliverables</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Data Research Design</p></td>
+<td><p>Analyse project brief, align with stakeholders, generate project’s hypothesis, and design data research project. Review available literature, and describe the data set, incl. relevance, and limitations.</p></td>
+<td><p>project overview and plan, pdf</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Set Investigation &amp; Cleaning</p></td>
+<td><p>Create data profiling and integrity audit, measure data quality, and create a cohesive data set for statistical analyses.</p></td>
+<td><p>Excel file, documentation file</p></td>
+</tr>
+<tr class="row-even"><td><p>Statistical Analysis</p></td>
+<td><p>Conduct descriptive analysis and statistical hypothesis testing.</p></td>
+<td><p>Excel file, documentation file</p></td>
+</tr>
+<tr class="row-odd"><td><p>Interim Data Analysis Report</p></td>
+<td><p>Create an interim report with insights and findings.</p></td>
+<td><p>Report pdf</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Visualization</p></td>
+<td><p>Decide on the best fitting data visualization type, create charts and the dashboard in Tableau. Consolidate findings.</p></td>
+<td><p>Tableau dashboard, final documentation folder</p></td>
+</tr>
+<tr class="row-odd"><td><p>Presentation</p></td>
+<td><p>Present the research findings and recommendations to the key stakeholders.</p></td>
+<td><p>Tableau dashboard, presentation file</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="process">
+<h2>Process<a class="headerlink" href="#process" title="Permalink to this heading">#</a></h2>
+<section id="data-preparation">
+<h3>Data Preparation<a class="headerlink" href="#data-preparation" title="Permalink to this heading">#</a></h3>
+<p>First, I performed <strong>data profiling</strong> to assess the structure, content, and quality. I used Excel functions and formulas to explore the data set. I checked for errors, inconsistencies, or missing values in the data and documented them in a data quality report.</p>
+<p>Next, I implemented <strong>data integrity and quality checks</strong> to identify and resolve issues. I used Excel’s data validation and conditional formatting features to highlight and correct invalid or inaccurate data entries. I also used Excel’s Pivot Tables and Charts to summarize and visualize the data distribution and identify any outliers or anomalies.</p>
+<div class="seealso admonition">
+<p class="admonition-title">Results in Excel file</p>
+<p><a href="https://docs.google.com/spreadsheets/d/1rqjnr1F8Macox26OKS4aKBwt1jY3oT4S2KYvfqFMfw4/edit?usp=sharing" target="_blank">Explore the Excel file</a> exported to Google Sheets.</p>
+</div>
+<p>The final step was to apply <strong>data transformations</strong> such as filtering, sorting, grouping, and aggregating to integrate data from multiple sources into a unified data set for analysis. I used Excel’s VLOOKUP function to join data from different worksheets based on common keys.</p>
+</section>
+<section id="data-analysis">
+<h3>Data Analysis<a class="headerlink" href="#data-analysis" title="Permalink to this heading">#</a></h3>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row docutils">
+<div class="sd-col sd-d-flex-column sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
+<p>I conducted various <strong>statistical analyses</strong> to explore the data and answer the research question. Next, I calculated the <strong>variance and standard deviation</strong> for key variables to measure their dispersion and variability. Then I identified <strong>correlations</strong> between variables to examine their linear relationship. I formulated a statistical <strong>hypothesis</strong> based on the research question and conducted hypothesis testing using appropriate methods and significance levels.</p>
+<div class="hint admonition">
+<p class="admonition-title">Hypothesis</p>
+<p><em>The bigger fraction of 65+ years old people in the state results in proportionally higher numbers of death caused by influenza.</em></p>
+</div>
+</div>
+<div class="sd-col sd-d-flex-column sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
+<p><img alt="influenza-hypothesis" src="_images/influenza-report.png" /></p>
+</div>
+<div class="sd-col sd-d-flex-column sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 docutils">
+<p>I interpreted the results of the hypothesis testing and drew conclusions. Then I created a comprehensive interim report consolidating the findings of the statistical analyses and providing recommendations.</p>
+</div>
+</div>
+</div>
+<div class="seealso admonition">
+<p class="admonition-title">Interim Report</p>
+<p>Explore the results from the <a href="_static/influenza/influenza-report.pdf" target="_blank">interim report.</a></p>
+</div>
+</section>
+<section id="data-vizualisation-findings">
+<h3>Data Vizualisation &amp; Findings<a class="headerlink" href="#data-vizualisation-findings" title="Permalink to this heading">#</a></h3>
+<p>In the final part of the project I used Tableau to create various types of charts and visualizations to present the data analysis results. I showed the parts of a whole and the differences between categories by using composition and comparison charts such as pie charts, bar charts, and stacked area charts.</p>
+</section>
+</section>
+<section id="results">
+<h2>Results<a class="headerlink" href="#results" title="Permalink to this heading">#</a></h2>
+<div class="full-width docutils">
+<div class='tableauPlaceholder' id='viz1689516709704' style='position: relative'><noscript><a href='#'><img alt='Influenza in USA ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;In&#47;Influenza-Storyv_1_5&#47;InfluenzainUSA&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='Influenza-Storyv_1_5&#47;InfluenzainUSA' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;In&#47;Influenza-Storyv_1_5&#47;InfluenzainUSA&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1689516709704');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+</div>
+<!---
+## Challenges
+- Tableau settings for responsiveness
+- Excel VLOOKUP
+- Problem with data sets
+- Data sets research and new data integration
+---></section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="asteroidos.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">AsteroidOS</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="instacart.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">instacart Data Set</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives">Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-plan">Project Plan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#process">Process</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-preparation">Data Preparation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-analysis">Data Analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-vizualisation-findings">Data Vizualisation &amp; Findings</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#results">Results</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By 1001dimensions
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

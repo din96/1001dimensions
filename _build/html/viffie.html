@@ -1,0 +1,1039 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>viffie &#8212; by 1001dimensions</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+    <script src="_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'viffie';</script>
+    <link rel="shortcut icon" href="https://fav.farm/👀"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="AsteroidOS" href="asteroidos.html" />
+    <link rel="prev" title="Autobahn Design Ops" href="ab-ops.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/1001dim-logo.svg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/1001dim-logo.svg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">DESIGN OPS</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="abds.html">Autobahn Design System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ab-ops.html">Autobahn Design Ops</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">PRODUCT &amp; UX</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">viffie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="asteroidos.html">asteroid OS</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">DATA ANALYTICS</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="influenza.html">Influenza</a></li>
+<li class="toctree-l1"><a class="reference internal" href="instacart.html">instacart</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/din96/portfolio-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/viffie.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>viffie</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#market-research">Market Research</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#user-research">User Research</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#user-personas-and-experience-map">User Personas and Experience Map</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mvp">MVP</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#information-architecture">Information Architecture</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prototyping-testing">Prototyping &amp; Testing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#user-interface-design">User Interface Design</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <p><img alt="viffie-banner-web" src="_images/viffie-banner-web.png" /></p>
+<section class="tex2jax_ignore mathjax_ignore" id="viffie">
+<h1>viffie<a class="headerlink" href="#viffie" title="Permalink to this heading">#</a></h1>
+<p>viffie is an innovative application that enables users to collaborate, communicate, and interact with each other in real-time, regardless of their physical location. The project was conceived and developed during the Advanced User Experience Training with <a href="https://careerfoundry.com" target="_blank">Career Foundry</a> in 2017, four years ahead of the COVID-pandemic and the surge in remote work.</p>
+<section id="market-research">
+<h2>Market Research<a class="headerlink" href="#market-research" title="Permalink to this heading">#</a></h2>
+<p>The objective of the market research was to identify the potential competitors in the market, their strengths and weaknesses, and to establish the business goals for viffie.</p>
+<ul class="simple">
+<li><p>Using Open Intelligence, I scraped a list of the task management, remote work and team collaboration tools available in the market.</p></li>
+<li><p>I created app categories: todo lists, GTP apps (Getting Things Done), Kanban Board Apps, Plain Text todo lists, team-oriented productivity tools, and gamified productivity tools.</p></li>
+<li><p>I classified apps by platform support, business model, data management, synchronization, project and task management, collaboration, UI customization, real-time features, and other features.</p></li>
+<li><p>From the previously mentioned list I selected the four most notable apps and audited them by class.</p></li>
+<li><p>I created a list of potential MVP features.</p></li>
+<li><p>As the last step I mapped the strategy for the alpha release (using the SMART goals method)</p></li>
+</ul>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-g-3 sd-g-xs-3 sd-g-sm-3 sd-g-md-3 sd-g-lg-3 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<a class=""
+               data-lightbox="group-market-research"
+               href="_images/viffie-marketresearch-11.png"
+               title=""
+               data-title=""
+               
+               ><img src="_images/viffie-marketresearch-11.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a></div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<a class=""
+               data-lightbox="group-market-research"
+               href="_images/viffie-marketresearch-21.png"
+               title=""
+               data-title=""
+               
+               ><img src="_images/viffie-marketresearch-21.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a></div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<a class=""
+               data-lightbox="group-market-research"
+               href="_images/viffie-marketresearch-31.png"
+               title=""
+               data-title=""
+               
+               ><img src="_images/viffie-marketresearch-31.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="user-research">
+<h2>User Research<a class="headerlink" href="#user-research" title="Permalink to this heading">#</a></h2>
+<p>Viffie is an application that focuses on remote work and team collaboration. Understanding how people work remotely and what they need to succeed in their jobs was crucial to this project. The first step in the user research phase was setting up the hypothesis:</p>
+<div class="tip admonition">
+<p class="admonition-title">Hypothesis</p>
+<p>As more people are working remotely, there is a demand for a virtual office application that can cater to the diverse needs of team members. To be successful and productive in a traditional office, people need to:
+communicate, collaborate, brainstorm, exchange information, experience, expertise and thoughts, analyze, research, evaluate and execute.</p>
+<p>Therefore, a virtual office application should provide the following tools: chat, video chat, social media features that can keep track of colleagues’ activities, calendar and its variations, timer, pin board, sticky notes, kanban board, word processor, to-do lists, simple drawing tool, mind map, milestones indicator, personal assistant.</p>
+</div>
+<p>Next, I defined the the survey target audience as remote or potential remote workers. The survey was distributed through various channels (bots creators and users forum, open source community IRC channel, large financial enterprise internal chat). The survey questions derived from the core question „How viffie will impact your work?“. I also narrowed down the categories to four topics:</p>
+<ul class="simple">
+<li><p>team integration</p></li>
+<li><p>collaboration</p></li>
+<li><p>productivity and motivation</p></li>
+<li><p>communication
+Each category had at least one question in the survey.</p></li>
+</ul>
+<p>The results indicated, among other things, that:</p>
+<ul class="simple">
+<li><p>46.3% of respondents worked remotely.</p></li>
+<li><p>More than 70% of respondents rated the awareness of team members’ current activities as an important or very important, supporting the hypothesis that an integrated Mood Board is a key MVP feature.</p></li>
+<li><p>The personal calendar was a tool that 72.34% would like to have in their virtual office. Users valued Milestones Tracking and Timers, but more as additional features. Some of the respondents believed that communication tools might enhance their time management.</p></li>
+<li><p>More than 50% of respondents found personal assistant a tool that could boost their productivity or motivation.</p></li>
+</ul>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-g-3 sd-g-xs-3 sd-g-sm-3 sd-g-md-3 sd-g-lg-3 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<a class=""
+               data-lightbox="group-u-research"
+               href="_images/viffie-uresearch-11.png"
+               title=""
+               data-title=""
+               
+               ><img src="_images/viffie-uresearch-11.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a></div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<a class=""
+               data-lightbox="group-u-research"
+               href="_images/viffie-uresearch-21.png"
+               title=""
+               data-title=""
+               
+               ><img src="_images/viffie-uresearch-21.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a></div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<a class=""
+               data-lightbox="group-u-research"
+               href="_images/viffie-uresearch-31.png"
+               title=""
+               data-title=""
+               
+               ><img src="_images/viffie-uresearch-31.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="user-personas-and-experience-map">
+<h2>User Personas and Experience Map<a class="headerlink" href="#user-personas-and-experience-map" title="Permalink to this heading">#</a></h2>
+<p>After conducting interviews and surveys with the focus group, I defined the primary, secondary, and complementary target groups and developed four <strong>User Personas</strong>. The subsequent step was creating a <strong>user experience map</strong> and tasks models identifying the pain points and critical moments of working remotely. This insight enabled a new approach to enhance viffie’s MVPs.</p>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-g-3 sd-g-xs-3 sd-g-sm-3 sd-g-md-3 sd-g-lg-3 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<a class=""
+               data-lightbox="group-ux-mapping"
+               href="_images/viffie-experience-map1.png"
+               title=""
+               data-title=""
+               
+               ><img src="_images/viffie-experience-map1.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a></div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<a class=""
+               data-lightbox="group-ux-mapping"
+               href="_images/viffie-task-modelling1.png"
+               title=""
+               data-title=""
+               
+               ><img src="_images/viffie-task-modelling1.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="mvp">
+<h2>MVP<a class="headerlink" href="#mvp" title="Permalink to this heading">#</a></h2>
+<p>The market and user research data was thoroughly analyzed, providing a clear direction for viffie’s development. I based the concept phase on the assumptions derived from the user needs research and business goals analysis. The <strong>MVP features</strong> consisted of:</p>
+<ul class="simple">
+<li><p>Mood Board</p></li>
+<li><p>Personal and Team Calendar</p></li>
+<li><p>White Board and Sticky Notes</p></li>
+<li><p>Word processor</p></li>
+<li><p>Chat</p></li>
+<li><p>Personal Assistant (bot)</p></li>
+</ul>
+</section>
+<section id="information-architecture">
+<h2>Information Architecture<a class="headerlink" href="#information-architecture" title="Permalink to this heading">#</a></h2>
+<p>The project’s next phase involved creating an <strong>information architecture</strong> that could identify the product’s key features and provide a framework for developing user-friendly and efficient software. I conducted a <strong>card sorting</strong> test with a user group to ensure that the structure and logic matched their expectations and preferences. Then I created <strong>user flows and diagrams</strong> for the product page and web application.</p>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-g-3 sd-g-xs-3 sd-g-sm-3 sd-g-md-3 sd-g-lg-3 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<a class=""
+               data-lightbox="group-viffie-ai"
+               href="_images/viffie-ia-31.png"
+               title=""
+               data-title=""
+               
+               ><img src="_images/viffie-ia-31.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a></div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<a class=""
+               data-lightbox="group-viffie-ai"
+               href="_images/viffie-ia-21.png"
+               title=""
+               data-title=""
+               
+               ><img src="_images/viffie-ia-21.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a></div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<a class=""
+               data-lightbox="group-viffie-ai"
+               href="_images/viffie-ia-11.png"
+               title=""
+               data-title=""
+               
+               ><img src="_images/viffie-ia-11.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="prototyping-testing">
+<h2>Prototyping &amp; Testing<a class="headerlink" href="#prototyping-testing" title="Permalink to this heading">#</a></h2>
+<p>The entire process of creating viffie followed the Lean UX approach of design-validate-iterate. There were six design iterations on the MVP in total. First, I designed a set of paper prototypes and tested them on a group of users. The results of those tests informed the changes implemented during the wireframe design. I designed three wireframe sets for mobile, tablet, and desktop devices and used three different applications (inVision, Marvell App, <a class="reference external" href="http://atomic.io">atomic.io</a>) to build interactive prototypes. Then, I repeated the user tests, removed or improved inefficient elements, revised the concepts, and created new assumptions.</p>
+<p>Tests conducted:</p>
+<ul class="simple">
+<li><p>card sorting</p></li>
+<li><p>A/B</p></li>
+<li><p>preference tests</p></li>
+<li><p>click test</p></li>
+<li><p>user flows tests with interactive prototypes</p></li>
+</ul>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-g-3 sd-g-xs-3 sd-g-sm-3 sd-g-md-3 sd-g-lg-3 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<a class=""
+               data-lightbox="group-viffie-prototype"
+               href="_images/viffie-mockups-11.png"
+               title=""
+               data-title=""
+               
+               ><img src="_images/viffie-mockups-11.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a></div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<a class=""
+               data-lightbox="group-viffie-prototype"
+               href="_images/viffie-mockups-21.png"
+               title=""
+               data-title=""
+               
+               ><img src="_images/viffie-mockups-21.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a></div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<a class=""
+               data-lightbox="group-viffie-prototype"
+               href="_images/viffie-mockups-31.png"
+               title=""
+               data-title=""
+               
+               ><img src="_images/viffie-mockups-31.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a></div>
+</div>
+</div>
+</div>
+</div>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-g-3 sd-g-xs-3 sd-g-sm-3 sd-g-md-3 sd-g-lg-3 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<a class=""
+               data-lightbox="group-viffie-prototype"
+               href="_images/viffie-mockups-41.png"
+               title=""
+               data-title=""
+               
+               ><img src="_images/viffie-mockups-41.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a></div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<a class=""
+               data-lightbox="group-viffie-prototype"
+               href="_images/viffie-mockups-51.png"
+               title=""
+               data-title=""
+               
+               ><img src="_images/viffie-mockups-51.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a></div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<a class=""
+               data-lightbox="group-viffie-prototype"
+               href="_images/viffie-mockups-61.png"
+               title=""
+               data-title=""
+               
+               ><img src="_images/viffie-mockups-61.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a></div>
+</div>
+</div>
+</div>
+</div>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-g-3 sd-g-xs-3 sd-g-sm-3 sd-g-md-3 sd-g-lg-3 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<a class=""
+               data-lightbox="group-viffie-prototype"
+               href="_images/viffie-test-scenario-11.png"
+               title=""
+               data-title=""
+               
+               ><img src="_images/viffie-test-scenario-11.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a></div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<a class=""
+               data-lightbox="group-viffie-prototype"
+               href="_images/viffie-abtest-11.png"
+               title=""
+               data-title=""
+               
+               ><img src="_images/viffie-abtest-11.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a></div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<a class=""
+               data-lightbox="group-viffie-prototype"
+               href="_images/viffie-abtest-21.png"
+               title=""
+               data-title=""
+               
+               ><img src="_images/viffie-abtest-21.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="user-interface-design">
+<h2>User Interface Design<a class="headerlink" href="#user-interface-design" title="Permalink to this heading">#</a></h2>
+<p>The visual design of viffie follows the Material Design principles. The key aspects were to create a user interface that appeals to different preferences, minimizes the distraction from work, and ensures that the user interactions facilitate the task flows and are coherent and dynamic.
+The deliverables produced during this phase included:</p>
+<ul class="simple">
+<li><p>Inspiration mood board</p></li>
+<li><p>UI Kit</p></li>
+<li><p>Desktop, tablet, and mobile mockups of the app view</p></li>
+</ul>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-g-3 sd-g-xs-3 sd-g-sm-3 sd-g-md-3 sd-g-lg-3 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<a class=""
+               data-lightbox="group-viffie-ui"
+               href="_images/viffie-ui-11.png"
+               title=""
+               data-title=""
+               
+               ><img src="_images/viffie-ui-11.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a></div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<a class=""
+               data-lightbox="group-viffie-ui"
+               href="_images/viffie-ui-21.png"
+               title=""
+               data-title=""
+               
+               ><img src="_images/viffie-ui-21.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a></div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<a class=""
+               data-lightbox="group-viffie-ui"
+               href="_images/viffie-ui-31.png"
+               title=""
+               data-title=""
+               
+               ><img src="_images/viffie-ui-31.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a></div>
+</div>
+</div>
+</div>
+</div>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-g-3 sd-g-xs-3 sd-g-sm-3 sd-g-md-3 sd-g-lg-3 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<a class=""
+               data-lightbox="group-viffie-ui"
+               href="_images/viffie-ui-41.png"
+               title=""
+               data-title=""
+               
+               ><img src="_images/viffie-ui-41.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a></div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<a class=""
+               data-lightbox="group-viffie-ui"
+               href="_images/viffie-ui-51.png"
+               title=""
+               data-title=""
+               
+               ><img src="_images/viffie-ui-51.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a></div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<a class=""
+               data-lightbox="group-viffie-ui"
+               href="_images/viffie-ui-61.png"
+               title=""
+               data-title=""
+               
+               ><img src="_images/viffie-ui-61.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="ab-ops.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Autobahn Design Ops</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="asteroidos.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">AsteroidOS</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#market-research">Market Research</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#user-research">User Research</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#user-personas-and-experience-map">User Personas and Experience Map</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mvp">MVP</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#information-architecture">Information Architecture</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prototyping-testing">Prototyping &amp; Testing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#user-interface-design">User Interface Design</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By 1001dimensions
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+# Table of contents
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+# viffie
+format: jb-book
+root: intro
+parts:
+  - caption: DESIGN OPS
+    chapters:
+    - file: abds
+      title: Autobahn Design System
+    - file: ab-ops
+      title: Autobahn Design Ops
+  - caption: PRODUCT & UX
+    chapters:
+    - file: viffie
+      title: viffie
+    - file: asteroidos
+      title: asteroid OS 
+  - caption: DATA ANALYTICS
+    chapters:
+    - file: influenza
+      title: Influenza
+    - file: instacart
+      title: instacart
+    file: data-viz
+    file: insights
+  

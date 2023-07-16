@@ -1,0 +1,46 @@
+# Book settings
+# Learn more at https://jupyterbook.org/customize/config.html
+
+title: by 1001dimensions
+author: 1001dimensions
+logo: 1001dim-logo.svg
+copyright: "2023"
+exclude_patterns: [.DS_Store]
+
+# Force re-execution of notebooks on each build.
+# See https://jupyterbook.org/content/execute.html
+execute:
+  execute_notebooks: cache
+
+# Define the name of the latex output file for PDF builds
+latex:
+  latex_documents:
+    targetname: book.tex
+
+# Add a bibtex file so that we can create citations
+bibtex_bibfiles:
+  - references.bib
+
+# Information about where the book exists on the web
+repository:
+  url: https://github.com/din96/portfolio-book  # Online location of your book
+
+# Add GitHub buttons to your book
+# See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
+html:
+  use_issues_button: false
+  use_repository_button: true
+  favicon: "https://fav.farm/👀"
+  use_edit_page_button: false
+  use_issues_button: false
+  home_page_in_navbar: false
+  navigation_with_keys: false
+
+sphinx:
+    html_theme_options: 
+      navigation_with_keys: false
+    extra_extensions:
+        - sphinxcontrib.images
+    config:
+        images_config: 
+            override_image_directive: true
