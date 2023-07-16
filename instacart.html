@@ -1,0 +1,1246 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>instacart Data Set &#8212; by 1001dimensions</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+    <script src="_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'instacart';</script>
+    <link rel="shortcut icon" href="https://fav.farm/👀"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Influenza Data Set" href="influenza.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/1001dim-logo.svg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/1001dim-logo.svg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">DESIGN OPS</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="abds.html">Autobahn Design System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ab-ops.html">Autobahn Design Ops</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">PRODUCT &amp; UX</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="viffie.html">viffie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="asteroidos.html">asteroid OS</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">DATA ANALYTICS</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="influenza.html">Influenza</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">instacart</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/din96/portfolio-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/instacart.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>instacart Data Set</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives">Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#planning-research">Planning &amp; Research</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stakeholders">Stakeholders</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-questions">Key questions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset">Dataset</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#population-flow">Population Flow</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#data-preparation-plan">Data Preparation Plan</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#final-dataframe-requirements">Final Dataframe Requirements</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-cleansing-wrangling">Data Cleansing &amp; Wrangling</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-frames">Data Frames</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flags">Flags</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#user-activity-by-hourly-ranges">User activity by hourly ranges</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#user-by-age">User by age</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-dictionary">Data Dictionary</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#products">products</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#product-orders-prior">product-orders-prior</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-insights">Data Insights</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#time">Time</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#departments">Departments</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#customers">Customers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prices">Prices</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#results">Results</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <p><img alt="instacart-banner" src="_images/instacart-banner.png" /></p>
+<section class="tex2jax_ignore mathjax_ignore" id="instacart-data-set">
+<h1>instacart Data Set<a class="headerlink" href="#instacart-data-set" title="Permalink to this heading">#</a></h1>
+<p>instacart is an online grocery store that operates through an app. As a way to find good data scientists and get ideas from the community, Instacart has released some of their data. The anonymized dataset contains a sample of aprox. 3 million grocery orders from more than 200,000 Instacart users. According to their <a href="https://tech.instacart.com/3-million-instacart-orders-open-sourced-d40d29ead6f2">article published on Medium</a>:</p>
+<blockquote>
+<div><p>For each user, we provide between 4 and 100 of their orders, with the sequence of products purchased in each order. We also provide the week and hour of day the order was placed, and a relative measure of time between orders.</p>
+</div></blockquote>
+<section id="objectives">
+<h2>Objectives<a class="headerlink" href="#objectives" title="Permalink to this heading">#</a></h2>
+<div class="dropdown admonition">
+<p class="admonition-title">Learning objectives</p>
+<ul class="simple">
+<li><p>learn new Python libraries</p></li>
+<li><p>prepare data for analysis and conduct some fundamental data engineering tasks using large amounts of data</p></li>
+<li><p>create data visualisations with Python</p></li>
+</ul>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Project objectives</p>
+<p>Instacart already has very good sales, but they want to uncover more information about their sales patterns. The project obejctive is to perform an initial data and exploratory analysis of some of their data to derive insights and suggest strategies for better segmentation based on the provided criteria.</p>
+</div>
+</section>
+<section id="planning-research">
+<h2>Planning &amp; Research<a class="headerlink" href="#planning-research" title="Permalink to this heading">#</a></h2>
+<p>First I identified potential stakeholders and what they needed to know. I derived the most pressing questions that I could address with the dataset. I also explored the datasets in broad terms. I created a population flow chart to organize and synthesize the data in a neat, structured way. Finally, I established the final data frame requirements - the data frame on which I planned to conduct the in-depth analysis.</p>
+<section id="stakeholders">
+<h3>Stakeholders<a class="headerlink" href="#stakeholders" title="Permalink to this heading">#</a></h3>
+<p>The Instacart stakeholders are most interested in customers purchasing behaviors and their segmentation. They want to target different customers with applicable marketing campaigns to see whether they affect the sale of their products.</p>
+<blockquote>
+<div><p><strong>Vice President of Marketing</strong> <br/> “We’re always looking into improving our targeting for ad campaigns.”</p>
+</div></blockquote>
+<blockquote>
+<div><p><strong>Senior Vice President of Sales</strong> <br/>”We need to know what part of our offering has the lowest market share and why. Based on this input, we could improve this sector and boost sales.”</p>
+</div></blockquote>
+</section>
+<section id="key-questions">
+<h3>Key questions<a class="headerlink" href="#key-questions" title="Permalink to this heading">#</a></h3>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Time</p>
+<ul class="simple">
+<li><p>The sales team needs to know what the busiest days of the week and hours of the day are (i.e., the days and times with the most orders) in order to schedule ads at times when there are fewer orders.</p></li>
+<li><p>They also want to know whether there are particular times of the day when people spend the most money, as this might inform the type of products they advertise at these times.</p></li>
+</ul>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Departments</p>
+<ul class="simple">
+<li><p>Are there certain types of products that are more popular than others?</p></li>
+<li><p>The marketing and sales teams want to know which departments have the highest frequency of product
+orders.</p></li>
+</ul>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Customers</p>
+<ul class="simple">
+<li><p>What are the different types of customers in the system and how their ordering behaviors differ?</p></li>
+<li><p>What’s the distribution among users in regards to their brand loyalty (i.e., how
+often do they return to Instacart)?</p></li>
+<li><p>Are there differences in ordering habits based on a customer’s loyalty status?</p></li>
+<li><p>Are there differences in ordering habits based on a customer’s region?</p></li>
+</ul>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Pricing</p>
+<ul class="simple">
+<li><p>Instacart has a lot of products with different price tags. Marketing and sales want to use
+simpler price range groupings to help direct their efforts.</p></li>
+</ul>
+</div>
+</section>
+<section id="dataset">
+<h3>Dataset<a class="headerlink" href="#dataset" title="Permalink to this heading">#</a></h3>
+<section id="population-flow">
+<h4>Population Flow<a class="headerlink" href="#population-flow" title="Permalink to this heading">#</a></h4>
+<iframe src="https://miro.com/app/live-embed/uXjVMHuEmqI=/?moveToViewport=-1384,-761,2929,1521&embedId=898286255048" scrolling="no" allow="fullscreen; clipboard-read; clipboard-write" allowfullscreen width="768" height="432" frameborder="0"></iframe>
+</section>
+<section id="data-preparation-plan">
+<h4>Data Preparation Plan<a class="headerlink" href="#data-preparation-plan" title="Permalink to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p>Import each Dataframe into the separate notebook.</p></li>
+<li><p>Conduct initial exploration.</p></li>
+<li><p>For each Dataframe conduct data cleansing and wrangling.</p></li>
+<li><p>For each Dataframe conduct descriptive statistics.</p></li>
+<li><p>Update Data Dictionary.</p></li>
+<li><p>Perform necessary data combination (see next Section “Population flow” for details).</p></li>
+</ol>
+</section>
+<section id="final-dataframe-requirements">
+<h4>Final Dataframe Requirements<a class="headerlink" href="#final-dataframe-requirements" title="Permalink to this heading">#</a></h4>
+<div class="admonition-requirements admonition">
+<p class="admonition-title">Requirements</p>
+<ol class="arabic simple">
+<li><p>All project data has been merged into a single data set.</p></li>
+<li><p>A frequency of the merge flag
+shows the merged data set is a 100% match to the combined original data sets.</p></li>
+<li><p>Merged data set only contains variables to be used in the analysis.</p></li>
+</ol>
+</div>
+</section>
+</section>
+</section>
+<section id="data-cleansing-wrangling">
+<h2>Data Cleansing &amp; Wrangling<a class="headerlink" href="#data-cleansing-wrangling" title="Permalink to this heading">#</a></h2>
+<p>With a good understanding of the project’s scope, I was ready to move on to the next phase. For data wrangling with Python, I decided to use the Anaconda distribution.
+First, I examined each data frame and its variables. I performed data type checks and looked for inconsistencies, missing or duplicated values, and outliers. Then I documented each data frame in the data dictionary, including raw and clean versions documentation. I then merged the clean data frames into a final set, which I later used for the final analysis and data visualization.</p>
+<section id="data-frames">
+<h3>Data Frames<a class="headerlink" href="#data-frames" title="Permalink to this heading">#</a></h3>
+<p>One interesting case that I discovered during the data cleansing was the <code class="docutils literal notranslate"><span class="pre">family_status</span></code> variable available in the customer’s data frame. I was hoping to use that data for future analysis and data visualization. After checking the contents in detail, I realized that there are some values in “living with family and siblings” that had less than three family members. Also, it was unclear why the variable <code class="docutils literal notranslate"><span class="pre">divorced/widowed</span></code> was grouping two different family statuses. As a result, I decided to drop an entire column and focus on the age groups instead.</p>
+<p><img alt="data-wrangling" src="_images/data-wrangling-customers.png" /></p>
+</section>
+<section id="flags">
+<h3>Flags<a class="headerlink" href="#flags" title="Permalink to this heading">#</a></h3>
+<section id="user-activity-by-hourly-ranges">
+<h4>User activity by hourly ranges<a class="headerlink" href="#user-activity-by-hourly-ranges" title="Permalink to this heading">#</a></h4>
+<p>The time of the day with the highest order frequency was one of the core answers I searched for.
+I wanted to approach the research scientifically, so I counted the orders for each hour and then calculated the statistics that helped me to divide the day into three groups. Then I created an empty array and looped the data frame assigning most/average/fewest orders flags.</p>
+<p><img alt="flags-hours" src="_images/flags-hours.png" /></p>
+</section>
+<section id="user-by-age">
+<h4>User by age<a class="headerlink" href="#user-by-age" title="Permalink to this heading">#</a></h4>
+<p>I often see numerical approaches to age segmentation, for example, 0-18, 19-25, 26-35, 36-64, 65+. I think this type of grouping was effective for looking at mortality rates in my previous project, where I was interested in the age at which people died.
+In the case of the Instacart data analysis, a more valuable approach is generational segmentation. There are a lot of behavioral studies dedicated to generational segmentation. Furthermore, this type of segmentation would be helpful when using a “jobs-to-be-done” framework to understand user needs. Lastly, each generation has different daily habits of using media. Segmenting by generations could help in targeting ad campaigns.</p>
+<p>Below you can see a code snippet with segmentation by generations - generations ranges are based on Pew Research Center data.
+<img alt="flag-generations" src="_images/flag-generations.png" /></p>
+</section>
+</section>
+<section id="data-dictionary">
+<h3>Data Dictionary<a class="headerlink" href="#data-dictionary" title="Permalink to this heading">#</a></h3>
+<p>A data dictionary wasn’t a requirement for this project. However, during the planning phase, I realized that I would be dealing with many data frames and variables that I would be updating or changing. I decided that spending some time setting up a data dictionary structure would benefit me in the future and make my work more efficient.</p>
+<p>Example of the data dictionary with two data frames:</p>
+<section id="products">
+<h4>products<a class="headerlink" href="#products" title="Permalink to this heading">#</a></h4>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-0">
+Current version</label><div class="sd-tab-content docutils">
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-header docutils">
+<p class="sd-card-text">products (49672 rows, 4 columns):</p>
+</div>
+<div class="sd-card-body docutils">
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p class="sd-card-text">Column name</p></th>
+<th class="head"><p class="sd-card-text">Data type</p></th>
+<th class="head"><p class="sd-card-text">Description</p></th>
+<th class="head"><p class="sd-card-text">Log</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">product_id</span></code> <span class="sd-sphinx-override sd-badge sd-bg-warning sd-bg-text-warning">key</span></p></td>
+<td><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">str</span></code></p></td>
+<td><p class="sd-card-text">Product identificator.</p></td>
+<td><p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-info sd-bg-text-info">changed-dtype</span></p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">product_name</span></code></p></td>
+<td><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">str</span></code></p></td>
+<td><p class="sd-card-text">Product name.</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">department_id</span></code> <span class="sd-sphinx-override sd-badge sd-bg-warning sd-bg-text-warning">key</span></p></td>
+<td><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">str</span></code></p></td>
+<td><p class="sd-card-text">Department identificator.</p></td>
+<td><p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-info sd-bg-text-info">changed-dtype</span></p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">prices</span></code></p></td>
+<td><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">float64</span></code></p></td>
+<td><p class="sd-card-text">Product price in USD</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-1">
+Raw version</label><div class="sd-tab-content docutils">
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-header docutils">
+<p class="sd-card-text">products (49693 rows, 5 columns):</p>
+</div>
+<div class="sd-card-body docutils">
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p class="sd-card-text">Column name</p></th>
+<th class="head"><p class="sd-card-text">Data type</p></th>
+<th class="head"><p class="sd-card-text">Description</p></th>
+<th class="head"><p class="sd-card-text">Log</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">product_id</span></code> <span class="sd-sphinx-override sd-badge sd-bg-warning sd-bg-text-warning">key</span></p></td>
+<td><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">int64</span></code></p></td>
+<td><p class="sd-card-text">Product identificator. Changing data type.</p></td>
+<td><p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-info sd-bg-text-info">changing-dtype</span></p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">product_name</span></code></p></td>
+<td><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">str</span></code></p></td>
+<td><p class="sd-card-text">Product name.</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">aisle_id</span></code></p></td>
+<td><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">int64</span></code></p></td>
+<td><p class="sd-card-text">Aisle indetificator. Irrelevant, dropping.</p></td>
+<td><p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-danger sd-bg-text-danger">dropping</span></p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">department_id</span></code> <span class="sd-sphinx-override sd-badge sd-bg-warning sd-bg-text-warning">key</span></p></td>
+<td><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">int64</span></code></p></td>
+<td><p class="sd-card-text">Department identificator. Changing data type</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">prices</span></code></p></td>
+<td><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">float64</span></code></p></td>
+<td><p class="sd-card-text">Product price in USD.</p></td>
+<td><p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-info sd-bg-text-info">changing-dtype</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="product-orders-prior">
+<h4>product-orders-prior<a class="headerlink" href="#product-orders-prior" title="Permalink to this heading">#</a></h4>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-2" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-2">
+Current version</label><div class="sd-tab-content docutils">
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-header docutils">
+<p class="sd-card-text">order-products-prior (32434489 rows, 4 columns):</p>
+</div>
+<div class="sd-card-body docutils">
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p class="sd-card-text">Column name</p></th>
+<th class="head"><p class="sd-card-text">Data type</p></th>
+<th class="head"><p class="sd-card-text">Description</p></th>
+<th class="head"><p class="sd-card-text">Log</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">order_id</span></code> <span class="sd-sphinx-override sd-badge sd-bg-warning sd-bg-text-warning">key</span></p></td>
+<td><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">str</span></code></p></td>
+<td><p class="sd-card-text">Order identificator. Changed data type.</p></td>
+<td><p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-info sd-bg-text-info">changed-dtype</span></p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">product_id</span></code> <span class="sd-sphinx-override sd-badge sd-bg-warning sd-bg-text-warning">key</span></p></td>
+<td><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">str</span></code></p></td>
+<td><p class="sd-card-text">Product identificator. Changed data type.</p></td>
+<td><p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-info sd-bg-text-info">changed-dtype</span></p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">add_to_cart_order</span></code></p></td>
+<td><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">int64</span></code></p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">reordered</span></code></p></td>
+<td><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">int64</span></code></p></td>
+<td><p class="sd-card-text">Number of reorders.</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<input id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-3">
+Raw version</label><div class="sd-tab-content docutils">
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-header docutils">
+<p class="sd-card-text">order-products-prior (32434489 rows, 4 columns):</p>
+</div>
+<div class="sd-card-body docutils">
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p class="sd-card-text">Column name</p></th>
+<th class="head"><p class="sd-card-text">Data type</p></th>
+<th class="head"><p class="sd-card-text">Description</p></th>
+<th class="head"><p class="sd-card-text">Log</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">order_id</span></code> <span class="sd-sphinx-override sd-badge sd-bg-warning sd-bg-text-warning">key</span></p></td>
+<td><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">int64</span></code></p></td>
+<td><p class="sd-card-text">Order identificator. Changing data type.</p></td>
+<td><p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-info sd-bg-text-info">changing-dtype</span></p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">product_id</span></code> <span class="sd-sphinx-override sd-badge sd-bg-warning sd-bg-text-warning">key</span></p></td>
+<td><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">int64</span></code></p></td>
+<td><p class="sd-card-text">Product identificator. Changing data type.</p></td>
+<td><p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-info sd-bg-text-info">changing-dtype</span></p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">add_to_cart_order</span></code></p></td>
+<td><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">int64</span></code></p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">reordered</span></code></p></td>
+<td><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">int64</span></code></p></td>
+<td><p class="sd-card-text">Number of reorders.</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="data-insights">
+<h2>Data Insights<a class="headerlink" href="#data-insights" title="Permalink to this heading">#</a></h2>
+<p>For the final stage of the project, I used a final data frame created by merging data frames containing product, order, customer, and department data.
+I did a quick data consistency check and ran some basic descriptive statistics to ensure quality.</p>
+<p>Next, I grouped the states into four regions to investigate later the tendencies on the regional level. I also divided the customers by spending type and created low and high spenders flags. Additionally, I grouped the customers by income and loyalty level.</p>
+<section id="time">
+<h3>Time<a class="headerlink" href="#time" title="Permalink to this heading">#</a></h3>
+<p>Following the plan and the project’s requirements, I started the analysis by answering the time-related questions. I first calculated the user activity and expenditure difference during the day, the order frequency, and the customers spending for each weekday. Next, I grouped the states into four regions to investigate later the tendencies on the regional level.</p>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-g-3 sd-g-xs-3 sd-g-sm-3 sd-g-md-3 sd-g-lg-3 docutils">
+<div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<a class=""
+               data-lightbox="group-customers"
+               href="_images/time-day-activity1.png"
+               title=""
+               data-title=""
+               
+               ><img src="_images/time-day-activity1.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a></div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<a class=""
+               data-lightbox="group-customers"
+               href="_images/time-week-frequency1.png"
+               title=""
+               data-title=""
+               
+               ><img src="_images/time-week-frequency1.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a></div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<a class=""
+               data-lightbox="group-customers"
+               href="_images/time-spending-weekdays1.png"
+               title=""
+               data-title=""
+               
+               ><img src="_images/time-spending-weekdays1.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a></div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<a class=""
+               data-lightbox="group-customers"
+               href="_images/time-expediture-difference1.png"
+               title=""
+               data-title=""
+               
+               ><img src="_images/time-expediture-difference1.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="departments">
+<h3>Departments<a class="headerlink" href="#departments" title="Permalink to this heading">#</a></h3>
+<p>I was interested in patterns that appeared in the departmental data. I discovered an intriguing value indicating that instacart has customers who place bulk orders. I compared customers who only ordered in bulk with those ordering from other departments.
+Next, I investigated the popularity of the departments by spending and income type, loyalty status, and generation group.</p>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-g-3 sd-g-xs-3 sd-g-sm-3 sd-g-md-3 sd-g-lg-3 docutils">
+<div class="sd-col sd-d-flex-row sd-col-4 sd-col-xs-4 sd-col-sm-4 sd-col-md-4 sd-col-lg-4 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<a class=""
+               data-lightbox="group-products"
+               href="_images/product-gen-departments1.png"
+               title=""
+               data-title=""
+               
+               ><img src="_images/product-gen-departments1.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a></div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-4 sd-col-xs-4 sd-col-sm-4 sd-col-md-4 sd-col-lg-4 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<a class=""
+               data-lightbox="group-products"
+               href="_images/products-regions1.png"
+               title=""
+               data-title=""
+               
+               ><img src="_images/products-regions1.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a></div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-4 sd-col-xs-4 sd-col-sm-4 sd-col-md-4 sd-col-lg-4 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<a class=""
+               data-lightbox="group-products"
+               href="_images/loyalty_department_viz1.png"
+               title=""
+               data-title=""
+               
+               ><img src="_images/loyalty_department_viz1.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a></div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-4 sd-col-xs-4 sd-col-sm-4 sd-col-md-4 sd-col-lg-4 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<a class=""
+               data-lightbox="group-products"
+               href="_images/income_department_viz1.png"
+               title=""
+               data-title=""
+               
+               ><img src="_images/income_department_viz1.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a></div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-4 sd-col-xs-4 sd-col-sm-4 sd-col-md-4 sd-col-lg-4 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<a class=""
+               data-lightbox="group-products"
+               href="_images/product-buyer-type-departments1.png"
+               title=""
+               data-title=""
+               
+               ><img src="_images/product-buyer-type-departments1.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a></div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-4 sd-col-xs-4 sd-col-sm-4 sd-col-md-4 sd-col-lg-4 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<a class=""
+               data-lightbox="group-products"
+               href="_images/products-spending-type1.png"
+               title=""
+               data-title=""
+               
+               ><img src="_images/products-spending-type1.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a></div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-4 sd-col-xs-4 sd-col-sm-4 sd-col-md-4 sd-col-lg-4 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<a class=""
+               data-lightbox="group-products"
+               href="_images/department-retail-whole1.png"
+               title=""
+               data-title=""
+               
+               ><img src="_images/department-retail-whole1.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="customers">
+<h3>Customers<a class="headerlink" href="#customers" title="Permalink to this heading">#</a></h3>
+<p>In line with my earlier plans, I based customer data analysis on generational segmentation. I also added regional dimensions to the research.
+I first calculated the customer distribution by loyalty status.
+Then I mapped the distribution of the generations by region. I also was interested in the generation group scoring highest in the loyalty status. To my surprise, all groups have shown similar loyalty status. Looking further for business opportunities, I checked for customers who ordered only drinks, beverages, and alcohol. Interestingly there was a relatively low number of products available in these departments and high order numbers.</p>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-g-3 sd-g-xs-3 sd-g-sm-3 sd-g-md-3 sd-g-lg-3 docutils">
+<div class="sd-col sd-d-flex-row sd-col-4 sd-col-xs-4 sd-col-sm-4 sd-col-md-4 sd-col-lg-4 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<a class=""
+               data-lightbox="group-customers"
+               href="_images/heatmap_gen_dep_viz1.png"
+               title=""
+               data-title=""
+               
+               ><img src="_images/heatmap_gen_dep_viz1.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a></div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-4 sd-col-xs-4 sd-col-sm-4 sd-col-md-4 sd-col-lg-4 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<a class=""
+               data-lightbox="group-customers"
+               href="_images/gen_customers_viz1.png"
+               title=""
+               data-title=""
+               
+               ><img src="_images/gen_customers_viz1.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a></div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-4 sd-col-xs-4 sd-col-sm-4 sd-col-md-4 sd-col-lg-4 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<a class=""
+               data-lightbox="group-customers"
+               href="_images/generations_region_viz1.png"
+               title=""
+               data-title=""
+               
+               ><img src="_images/generations_region_viz1.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a></div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-8 sd-col-xs-8 sd-col-sm-8 sd-col-md-8 sd-col-lg-8 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<a class=""
+               data-lightbox="group-customers"
+               href="_images/customers-gender1.png"
+               title=""
+               data-title=""
+               
+               ><img src="_images/customers-gender1.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a></div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-4 sd-col-xs-4 sd-col-sm-4 sd-col-md-4 sd-col-lg-4 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<a class=""
+               data-lightbox="group-customers"
+               href="_images/loyalty_region_viz1.png"
+               title=""
+               data-title=""
+               
+               ><img src="_images/loyalty_region_viz1.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a></div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-4 sd-col-xs-4 sd-col-sm-4 sd-col-md-4 sd-col-lg-4 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<a class=""
+               data-lightbox="group-customers"
+               href="_images/customer-types1.png"
+               title=""
+               data-title=""
+               
+               ><img src="_images/customer-types1.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a></div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-4 sd-col-xs-4 sd-col-sm-4 sd-col-md-4 sd-col-lg-4 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<a class=""
+               data-lightbox="group-customers"
+               href="_images/customer-income1.png"
+               title=""
+               data-title=""
+               
+               ><img src="_images/customer-income1.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a></div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-4 sd-col-xs-4 sd-col-sm-4 sd-col-md-4 sd-col-lg-4 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<a class=""
+               data-lightbox="group-customers"
+               href="_images/customers-drinks-only1.png"
+               title=""
+               data-title=""
+               
+               ><img src="_images/customers-drinks-only1.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="prices">
+<h3>Prices<a class="headerlink" href="#prices" title="Permalink to this heading">#</a></h3>
+<p>The last part of the project requirement was setting the price range flags. I additionally calculated the product price density.</p>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-g-3 sd-g-xs-3 sd-g-sm-3 sd-g-md-3 sd-g-lg-3 docutils">
+<div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<a class=""
+               data-lightbox="group-prices"
+               href="_images/product-price-density1.png"
+               title=""
+               data-title=""
+               
+               ><img src="_images/product-price-density1.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a></div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<a class=""
+               data-lightbox="group-prices"
+               href="_images/price-ranges1.png"
+               title=""
+               data-title=""
+               
+               ><img src="_images/price-ranges1.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="results">
+<h3>Results<a class="headerlink" href="#results" title="Permalink to this heading">#</a></h3>
+<p>At the end of the research, I exported all visualization into the files and embedded them into the Excel report.
+The file included a population flow diagram, consistency checks, wrangling steps, and column derivations tables. Additionally, I provided a dashboard-like two pages with visualizations of customers and marketing &amp; sales topics. I ended by summarising the findings and making a short list of recommendations.</p>
+<p><img alt="excel-report" src="_images/excel-report.png" /></p>
+<hr class="docutils" />
+<p><em>Note: I sourced the instacart logo and the 3d graphic from publicly available resources. I don’t own the copyrights for these assets.</em></p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="influenza.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Influenza Data Set</p>
+      </div>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives">Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#planning-research">Planning &amp; Research</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stakeholders">Stakeholders</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-questions">Key questions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset">Dataset</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#population-flow">Population Flow</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#data-preparation-plan">Data Preparation Plan</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#final-dataframe-requirements">Final Dataframe Requirements</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-cleansing-wrangling">Data Cleansing &amp; Wrangling</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-frames">Data Frames</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flags">Flags</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#user-activity-by-hourly-ranges">User activity by hourly ranges</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#user-by-age">User by age</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-dictionary">Data Dictionary</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#products">products</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#product-orders-prior">product-orders-prior</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-insights">Data Insights</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#time">Time</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#departments">Departments</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#customers">Customers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prices">Prices</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#results">Results</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By 1001dimensions
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
