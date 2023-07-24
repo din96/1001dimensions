@@ -45,3 +45,4 @@ sphinx:
     config:
         images_config: 
             override_image_directive: true
+        html_js_files: [ ['https://plausible.io/js/script.js', {'defer': 'defer', 'data-domain': 'din96.github.io/1001dimensions'}] ]
