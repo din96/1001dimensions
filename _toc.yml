@@ -26,4 +26,8 @@ parts:
       title: instacart
     file: data-viz
     file: insights
+  - caption: ABOUT
+    chapters:
+    - file: about
+      title: About
   
