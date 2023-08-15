@@ -1,23 +1,8 @@
-<!-- Matomo -->
-<script>
-  var _paq = window._paq = window._paq || [];
-  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
-  _paq.push(["setDoNotTrack", true]);
-  _paq.push(['trackPageView']);
-  _paq.push(['enableLinkTracking']);
-  (function() {
-    var u="https://1001dimensions.matomo.cloud/";
-    _paq.push(['setTrackerUrl', u+'matomo.php']);
-    _paq.push(['setSiteId', '1']);
-    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-    g.async=true; g.src='//cdn.matomo.cloud/1001dimensions.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
-  })();
-</script>
-<!-- End Matomo Code -->
+![hero-svg](_static/assets/hero.svg "designing-with-purpose-banner")
 
 # Hi! 👋
 I’m Emilia, a Berlin-based Product Designer. I am passionate about my work and proudly serve people through design, utilizing my experience and unique skill set. By connecting with people, understanding their desires, and what brings them value, my motivation is embedded with empathizing and focusing on user needs to design and produce sustainable solutions.
-
+<!---
 ## Design Ops Case Studies
 
 (cards-clicable)=
@@ -93,4 +78,5 @@ instacart dataset analysis for sales & marketing.
 :::
 ::::
 
+--!>
 

@@ -39,3 +39,8 @@ html {
 -ms-overflow-style: none;  /* IE and Edge */
 scrollbar-width: none;  /* Firefox */
 }
+
+.navbar-brand{
+  flex-direction: row;
+  justify-content: left;
+}
