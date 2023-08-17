@@ -28,6 +28,8 @@ parts:
     file: insights
   - caption: THIS PAGE
     chapters:
+    - file: about-me
+      title: About me
     - file: about
-      title: About
+      title: Backstage
   
