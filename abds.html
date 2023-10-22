@@ -80,7 +80,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Autobahn Design Ops" href="ab-ops.html" />
-    <link rel="prev" title="Hi! 👋" href="intro.html" />
+    <link rel="prev" title="&lt;no title&gt;" href="intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -180,7 +180,8 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">THIS PAGE</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about-me.html">About me</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about.html">About dimensions</a></li>
 </ul>
 
     </div>
@@ -344,7 +345,7 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#challenges">Challenges</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-questions">Key questions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#research-and-requirements-defintion">Research and Requirements Defintion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#research-and-requirements-definition">Research and Requirements Definition</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-the-system-and-documenting-on-the-go">Building the System and Documenting on the Go</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#maintainance-socializing-the-design-system">Maintainance &amp; Socializing the Design System</a></li>
 </ul>
@@ -361,9 +362,8 @@ document.write(`
   <p><img alt="ab-ds-web-banner" src="_images/autobahn-design-system.png" /></p>
 <section class="tex2jax_ignore mathjax_ignore" id="autobahn-design-system">
 <h1>Autobahn Design System<a class="headerlink" href="#autobahn-design-system" title="Permalink to this heading">#</a></h1>
-<p><a href="https://autobahn.security" target="_blank">Autobahn</a> is an all-inclusive <strong>cybersecurity platform</strong> that reduces the need for human capital with scalable solutions and provides effective prioritization to work on the right vulnerability issues. The product was initially delivered as a proof of concept to the first customers in 2021 by <a href="https://srlabs.de" target="_blank">Security Research Labs</a>, a cyber security consultancy, and then established as a separate entity.</p>
+<p><a href="https://autobahn.security" target="_blank">Autobahn</a> is an all-inclusive cybersecurity platform that reduces the need for human capital with scalable solutions and provides effective prioritization to work on the right vulnerability issues. The product was initially delivered as a proof of concept to the first customers in 2021 by <a href="https://srlabs.de" target="_blank">Security Research Labs</a> cyber security consultancy, and then established as a separate entity.</p>
 <p>The business objective was to bring the app to the next level. The decision to move from vueJS to React opened the opportunity to redesign the web app user interface. Strategically it was also the best moment to implement the design system. As the most experienced designer on the team, I was responsible for creating the design system.</p>
-<p>Project phases included:</p>
 <ul class="simple">
 <li><p>conduct the research</p></li>
 <li><p>plan strategically</p></li>
@@ -377,21 +377,21 @@ document.write(`
 <li><p>Lack of consistency in the interface and poor usability.</p></li>
 <li><p>Limited human resources and ambitious delivery goals.</p></li>
 <li><p>Challenging collaboration between the teams due to the missing documentation and clear guidelines.</p></li>
-<li><p>Major issues in the front-end code.</p></li>
+<li><p>Significant issues in the front-end code.</p></li>
 </ul>
 </section>
 <section id="key-questions">
 <h2>Key questions<a class="headerlink" href="#key-questions" title="Permalink to this heading">#</a></h2>
-<p>First, we established a set of key questions that would guide us through the process:</p>
+<p>First, we established a set of crucial questions that would guide us through the process:</p>
 <ul class="simple">
 <li><p>Who and how often will be using the design system?</p></li>
-<li><p>What technical aspects are important to be successful?</p></li>
-<li><p>How will we make sure that all teams stay up to date and on the same page?</p></li>
+<li><p>What technical aspects are essential to be successful?</p></li>
+<li><p>How will we ensure that all teams stay up-to-date and on the same page?</p></li>
 </ul>
 </section>
-<section id="research-and-requirements-defintion">
-<h2>Research and Requirements Defintion<a class="headerlink" href="#research-and-requirements-defintion" title="Permalink to this heading">#</a></h2>
-<p>During the research phase, I analyzed <a class="reference external" href="http://designsystemsrepo.com">designsystemsrepo.com</a> and other publicly available resources. Then I audited the existing UI and considered possible scenarios for the future. As a final part of the research, I conducted a <em>“Developers and Designers Challenges and Needs Workshop”</em> to find out the pain points and challenges of the team members.</br></br></p>
+<section id="research-and-requirements-definition">
+<h2>Research and Requirements Definition<a class="headerlink" href="#research-and-requirements-definition" title="Permalink to this heading">#</a></h2>
+<p>During the research phase, I analyzed <a class="reference external" href="http://designsystemsrepo.com">designsystemsrepo.com</a>, and other publicly available resources. Then I audited the existing UI and considered possible scenarios for the future. As a final part of the research, I conducted a <em>“Developers and Designers Challenges and Needs Workshop”</em> to find out the pain points and challenges of the team members.</br></br></p>
 <p><img alt="designsystem-playground" src="_images/design-system-playground.png" /></p>
 <p>The core requirements to decide which design system we will use as a template were:</p>
 <ul class="simple">
@@ -401,18 +401,18 @@ document.write(`
 <li><p>well-structured and detailed <strong>documentation</strong></p></li>
 <li><p>support diverse variants of <strong>tables and filters components</strong></p></li>
 </ul>
-<p>I have discovered that <a href="https://ant.design/" target="_blank"><strong>Ant Design</strong></a> fills all product needs and we decided to proceed with it and suggested <a href="https://storybook.js.org/" target="_blank"><strong>Storybook</strong></a> for the development environment.</p>
+<p>I have discovered that <a href="https://ant.design/" target="_blank"><strong>Ant Design</strong></a> fills all product needs, and we decided to proceed with it and suggested <a href="https://storybook.js.org/" target="_blank"><strong>Storybook</strong></a> for the development environment.</p>
 </section>
 <section id="building-the-system-and-documenting-on-the-go">
 <h2>Building the System and Documenting on the Go<a class="headerlink" href="#building-the-system-and-documenting-on-the-go" title="Permalink to this heading">#</a></h2>
 <p>The main strategic challenges during the process were the limited resources and the need to continue developing the next-generation version of the product. Our goal and the biggest challenge was to wireframe and mockup nine new views for the web app while building a design system. To achieve this, I decided to leverage the <a href="https://www.antforfigma.com/" target="_blank">Figma Ant Design Package</a> and use it as our component design base. Next, we iterated over the wireframes with the design and product teams to identify the required components for each view. </br></br></p>
 <p><img alt="ab-designsystem-workflow" src="_images/ab-designsystem-workflow.png" /></p>
-<p>After that, I selected the appropriate components from the UI Kit, customized them to our needs, and moved them to the Autobahn Design System. Then, the UI Designers created the final mockups of the views and submitted them for review. At the end of each cycle we delivered the assets to the design system developers and the web app developers accordingly. </br></br></p>
+<p>After that, I selected the appropriate components from the UI Kit, customized them to our needs, and moved them to the Autobahn Design System. Then, the UI Designers created the final mockups of the views and submitted them for review. At the end of each cycle, we delivered the assets to the design system developers and the web app developers accordingly. </br></br></p>
 <p><img alt="ab-designsystem-mockup" src="_images/ab-designsystem-mockup.png" /></p>
 </section>
 <section id="maintainance-socializing-the-design-system">
 <h2>Maintainance &amp; Socializing the Design System<a class="headerlink" href="#maintainance-socializing-the-design-system" title="Permalink to this heading">#</a></h2>
-<p>The design system was documented along the way on Figma Canvas, in the component styling descriptions, as a written guide in Jira, and on the Design System Slack channel. Each team member had full access to the Jira documentation, developers had viewing permission in Figma, and designers assigned to the design system maintenance tasks had full permission to the Figma file. We also established regular meetups with developers to review the Storybook and ensure consitency.</p>
+<p>The design system was documented along the way on Figma Canvas, in the component styling descriptions, as a written guide in Jira, and on the Design System Slack channel. Each team member had full access to the Jira documentation, developers had viewing permission in Figma, and designers assigned to the design system maintenance tasks had full permission to the Figma file. We also established regular meetups with developers to review the Storybook and ensure consistency.</p>
 </section>
 </section>
 
@@ -453,7 +453,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Hi! 👋</p>
+        <p class="prev-next-title">&lt;no title&gt;</p>
       </div>
     </a>
     <a class="right-next"
@@ -485,7 +485,7 @@ document.write(`
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#challenges">Challenges</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-questions">Key questions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#research-and-requirements-defintion">Research and Requirements Defintion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#research-and-requirements-definition">Research and Requirements Definition</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-the-system-and-documenting-on-the-go">Building the System and Documenting on the Go</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#maintainance-socializing-the-design-system">Maintainance &amp; Socializing the Design System</a></li>
 </ul>
