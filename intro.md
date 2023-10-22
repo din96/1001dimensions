@@ -1,4 +1,5 @@
 ![hero-svg](_static/assets/hero.svg "designing-with-purpose-banner")
+
 <!---
 ## Design Ops Case Studies
 

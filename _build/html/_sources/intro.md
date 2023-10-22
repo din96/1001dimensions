@@ -1,7 +1,5 @@
 ![hero-svg](_static/assets/hero.svg "designing-with-purpose-banner")
 
-# Hi! 👋
-I’m Emilia, a Berlin-based Product Designer. I am passionate about my work and proudly serve people through design, utilizing my experience and unique skill set. By connecting with people, understanding their desires, and what brings them value, my motivation is embedded with empathizing and focusing on user needs to design and produce sustainable solutions.
 <!---
 ## Design Ops Case Studies
 

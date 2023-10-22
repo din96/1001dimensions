@@ -31,5 +31,5 @@ parts:
     - file: about-me
       title: About me
     - file: about
-      title: Backstage
+      title: About dimensions
   

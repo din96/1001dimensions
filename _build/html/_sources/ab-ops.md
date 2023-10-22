@@ -1,3 +1,7 @@
+<meta name="description" content="Author: 1001dimensions,
+    Images: 1001dimensions, Description: Process of establishing design operations and team building.">
+
+
 ![autobahn-design-operations](_static/assets/autobahn-design-operations.png "autobahn-design-operations")
 
 # Autobahn Design Ops
