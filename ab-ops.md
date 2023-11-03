@@ -8,8 +8,9 @@
 As the team grew, there was a need for more effective and timely workflows. As the most senior designer on the team, and also knowledgable in the cyber security topics, I led the process of establishing design operations and team building.
 
 ## Processes
+<!---
 ![carrot-workflow](_static/assets/carrot-workflow.png "carrot-workflow.png")
-
+--->
 I established a set of processes that enabled us to deliver high-quality and user-centric solutions. The processes included:
 - **Product discovery framework and design workflow** - the approach to understand the problem space, define the user needs, generate and test ideas, and iterate on the solutions. We used various methods and tools such as user research, prototyping, usability testing, and design systems to support our workflow.
 - **Design planning, prioritization and tracking with Jira boards** - our way of managing our design tasks and deliverables. We used Jira boards to plan, prioritize and track our work, as well as to visualize our progress, collaborate effectively and align with the product roadmap.

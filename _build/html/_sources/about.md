@@ -3,7 +3,4 @@ This page presents projects demonstrating my skills in **product design, user ex
 
 My goal was to have full control over the appearance and functionality of this website. I also wanted to ensure a simple and pleasant browsing and reading experience. I opted for a minimal design based on Inter typeface family and used Jupyter Book and the Sphinx Design extension, as they are ideal tools for generating static documentation pages. I hope you enjoy your visit! 👀
 
-```{admonition} Update - September 2023
-As a next milestone on my roadmap is 
-```
 
