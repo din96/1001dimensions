@@ -12,10 +12,9 @@ The business objective was to bring the app to the next level. The decision to m
 - evangelize and maintain the system
 
 ## Challenges
-- Lack of consistency in the interface and poor usability.
+- Lack of consistency in the interface.
 - Limited human resources and ambitious delivery goals.
 - Challenging collaboration between the teams due to the missing documentation and clear guidelines.
-- Significant issues in the front-end code.
 
 ## Key questions
 First, we established a set of crucial questions that would guide us through the process:
@@ -26,7 +25,7 @@ First, we established a set of crucial questions that would guide us through the
 ## Research and Requirements Definition
 During the research phase, I analyzed designsystemsrepo.com, and other publicly available resources. Then I audited the existing UI and considered possible scenarios for the future. As a final part of the research, I conducted a *"Developers and Designers Challenges and Needs Workshop"* to find out the pain points and challenges of the team members.</br></br>
 
-![designsystem-playground](_static/assets/design-system-playground.png "Design System Playground")
+<!---[designsystem-playground](_static/assets/design-system-playground.png "Design System Playground")--->
 
 The core requirements to decide which design system we will use as a template were: 
 - built with **B2B data-heavy products** in mind
@@ -41,7 +40,7 @@ I have discovered that <a href="https://ant.design/" target="_blank">**Ant Desig
 ## Building the System and Documenting on the Go
 The main strategic challenges during the process were the limited resources and the need to continue developing the next-generation version of the product. Our goal and the biggest challenge was to wireframe and mockup nine new views for the web app while building a design system. To achieve this, I decided to leverage the <a href="https://www.antforfigma.com/" target="_blank">Figma Ant Design Package</a> and use it as our component design base. Next, we iterated over the wireframes with the design and product teams to identify the required components for each view. </br></br>
 
-![ab-designsystem-workflow](_static/assets/ab-ds/ab-designsystem-workflow.png "ab-designsystem-workflow")
+<!--- ![ab-designsystem-workflow](_static/assets/ab-ds/ab-designsystem-workflow.png "ab-designsystem-workflow") --->
 
 After that, I selected the appropriate components from the UI Kit, customized them to our needs, and moved them to the Autobahn Design System. Then, the UI Designers created the final mockups of the views and submitted them for review. At the end of each cycle, we delivered the assets to the design system developers and the web app developers accordingly. </br></br>
 
