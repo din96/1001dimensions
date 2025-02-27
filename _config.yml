@@ -1,10 +1,10 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: by 1001dimensions
+title: 1001dimensions
 author: 1001dimensions
 logo: 1001dim-logo.svg
-copyright: "2023"
+copyright: "2025"
 exclude_patterns: [.DS_Store]
 
 # Force re-execution of notebooks on each build.
